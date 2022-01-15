@@ -22,9 +22,9 @@ public class Item {
     private int qty;
 
     @Column(name = "cost")
-    private int cost;
+    private float cost;
 
-    public Item(String name, int qty, int cost) {
+    public Item(String name, int qty, float cost) {
         this.name=name;
         this.qty=qty;
         this.cost=cost;
