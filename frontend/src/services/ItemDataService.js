@@ -9,6 +9,10 @@ class ItemDataService {
         return http.get(`/items/${id}`)
     }
 
+    export() {
+        return http.get('/items/export')
+    }
+
     create(data) {
         return http.post('/items', data)
     }

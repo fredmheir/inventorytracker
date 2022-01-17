@@ -1,3 +1,4 @@
+import http from '../http-common'
 <template>
     <div>
         <table class="table">
@@ -17,6 +18,7 @@
                     <td><a :href="'/items/' + item.id" class="btn btn-primary">Edit</a></td>
                 </tr>
             </tbody>
+            <a href='http://localhost:8080/inventory/items/export' class='btn btn-primary'>Export to CSV</a>
         </table>
     </div>
 </template>
