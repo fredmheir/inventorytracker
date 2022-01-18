@@ -8,12 +8,12 @@ https://java.com/en/download/help/download_options.html
 ```
 
 ### 2) Install gradle
-Mac:
+Mac (with Homebrew):
 ```
 brew install gradle
 ```
 
-Windows:
+Mac (without Homebrew) or Windows:
 ```
 https://gradle.org/install/
 ```
@@ -27,16 +27,18 @@ npm install
 ## Running the web application
 
 ## 1) Run front-end application
-In a new terminal window, go in the frontend directory and e
+In a new terminal window, go in the frontend directory and execute the following command:
 ```
 npm run serve
 ```
+Leave this terminal window open.
 
 ## 2) Run backend application
-Open a terminal window, in the backend directory
+In a new terminal window, go in the backend directory and execute the following command:
 ```
 gradle bootRun
 ```
+Leave this terminal window open.
 
 ## 3) Access the application
 Visit http://localhost:8081/ to access the application.
