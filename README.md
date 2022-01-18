@@ -1,26 +1,29 @@
 # inventorytracker
 
-# frontend
+## backend
 
-## Project setup
+### 1) Install gradle
+Mac:
+```
+brew install gradle
+```
+### 2) Run backend application
+```
+gradle bootRun
+```
+
+
+
+## frontend
+
+### 1) Install npm
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 2) Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Now, visit http://localhost:8081/ to access the application.
