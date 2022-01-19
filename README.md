@@ -72,3 +72,20 @@ Visit http://localhost:8081/ to access the application.
 
 ## Troubleshooting
 The PostgreSQL database is hosted on Heroku, which performs maintenance from time to time. During maintenance, the database is read-only. Maintenance should last around 10 minutes.
+
+## Screenshot
+#### List inventory items 
+Accessible by visiting http://localhost:8081/
+![image](https://user-images.githubusercontent.com/63975740/150046507-840924d3-0ded-4843-a630-6ba20bb6012f.png)
+
+#### Add item (Create)
+![image](https://user-images.githubusercontent.com/63975740/150046525-172b7337-1ace-4df2-bf9c-595b494833ad.png)
+
+#### Edit item (Update, Delete)
+![image](https://user-images.githubusercontent.com/63975740/150046572-fa08c8cd-6959-423b-933c-294f64eb7ed6.png)
+
+#### Export to CSV
+![image](https://user-images.githubusercontent.com/63975740/150047311-dcf158f3-ca7a-4333-b5dd-ba0f85cf99f2.png)
+![image](https://user-images.githubusercontent.com/63975740/150047389-a1f9d0ed-2c5c-4f40-a6bc-48d67334b046.png)
+
+
