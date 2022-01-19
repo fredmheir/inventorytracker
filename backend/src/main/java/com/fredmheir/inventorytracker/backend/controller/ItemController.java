@@ -31,7 +31,7 @@ public class ItemController {
     @RequestMapping(path = "/items/export")
     public void getAllEmployeesInCsv(HttpServletResponse servletResponse) throws IOException {
         servletResponse.setContentType("text/csv");
-        servletResponse.addHeader("Content-Disposition","attachment; filename=\"employees.csv\"");
+        servletResponse.addHeader("Content-Disposition","attachment; filename=\"inventory.csv\"");
         csvExportService.writeItemToCsv(servletResponse.getWriter());
     }
 
@@ -58,10 +58,10 @@ public class ItemController {
 
     @GetMapping("/items/{id}")
     public ResponseEntity<Item> getItemById(@PathVariable("id") long id) {
-        Optional<Item> tutorialData = itemRepository.findById(id);
+        Optional<Item> itemData = itemRepository.findById(id);
 
-        if (tutorialData.isPresent()) {
-            return new ResponseEntity<>(tutorialData.get(), HttpStatus.OK);
+        if (itemData.isPresent()) {
+            return new ResponseEntity<>(itemData.get(), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
