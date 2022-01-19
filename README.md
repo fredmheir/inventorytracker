@@ -15,7 +15,7 @@
 * Java 14
 * Spring Framework
 * Apache Commons CSV dependency
-* PostgreSQL database - hosted on Heroku
+* PostgreSQL database - hosted on ElephantSQL
 
 #### Frontend
 * Vue.js Framework
@@ -39,13 +39,23 @@ Mac (without Homebrew) or Windows:
 https://gradle.org/install/
 ```
 
-#### 3) Install npm
+#### 3) Install Node.js
+Mac (with Homebrew):
+```
+brew install gradle
+```
+Mac (without Homebrew) or Windows:
+```
+https://nodejs.org/en/download/
+```
+
+#### 4) Install npm
 ```
 npm install
 ```
 
-#### 4) Optional : Install PostgreSQL
-The PostgreSQL database is hosted with Heroku. 
+#### 5) Optional : Install PostgreSQL
+The PostgreSQL database is hosted with ElephantSQL. 
 However, it is entirely possible to use a localhost PostgreSQL database simply by changing the applications.properties file located at backend/src/resources/applications.properties .
 
 ## Running the web application
@@ -68,10 +78,6 @@ Leave this terminal window open.
 Visit http://localhost:8081/ to access the application.
 
 
-
-
-## Troubleshooting
-The PostgreSQL database is hosted on Heroku, which performs maintenance from time to time. During maintenance, the database is read-only. Maintenance should last around 10 minutes.
 
 ## Screenshot
 #### List inventory items 
