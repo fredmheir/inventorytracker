@@ -1,4 +1,5 @@
 # inventorytracker
+An inventory tracking web service that provides the following information for each item stored in the inventory: name, quantity, and cost.
 
 ## Features
 #### Basic CRUD Functionalities
@@ -20,6 +21,16 @@
 #### Frontend
 * Vue.js Framework
 * HTML/CSS
+
+## Backend API Endpoints 
+See ItemController (backend/src/main/java/com.fredmheir.inventorytracker.backend/controller/ItemController.java)
+* GET /inventory/items/export - Export item list to CSV file
+* GET /inventory/items/ - GET a list of items
+* GET /inventory/items/{id} - GET an item by id
+* POST /inventory/items - POST a new item
+* PUT /inventory/items/{id} - PUT an item
+* DELETE /inventory/items/{id} - DELETE an item
+* DELETE /inventory/items - DELETE all items in inventory
 
 ## Setup
 
