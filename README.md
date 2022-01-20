@@ -53,7 +53,7 @@ https://gradle.org/install/
 #### 3) Install Node.js
 Mac (with Homebrew):
 ```
-brew install gradle
+brew install node
 ```
 Mac (without Homebrew) or Windows:
 ```
