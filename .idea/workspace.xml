@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52e19d11-81a2-4784-a752-52c884d3ad0d" name="Changes" comment="Added POST/PUT/GET methods">
-      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/fredmheir/inventorytracking/backend/BackendApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/fredmheir/inventorytracking/backend/BackendApplicationTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="52e19d11-81a2-4784-a752-52c884d3ad0d" name="Changes" comment="Added POST/PUT/GET methods" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,17 +84,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="InventorytrackerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="inventorytracker" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fredmheir.inventorytracker.InventorytrackerApplication" />
@@ -134,6 +112,7 @@
       <workItem from="1642188083059" duration="15000" />
       <workItem from="1642188522089" duration="1333000" />
       <workItem from="1642191307375" duration="90000" />
+      <workItem from="1644679413261" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="JPA setup">
       <created>1642125866562</created>
