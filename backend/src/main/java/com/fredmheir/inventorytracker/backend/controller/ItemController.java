@@ -1,16 +1,14 @@
 package com.fredmheir.inventorytracker.backend.controller;
 
 import com.fredmheir.inventorytracker.backend.model.Item;
-import com.fredmheir.inventorytracker.backend.repository.ItemRepository;
 import com.fredmheir.inventorytracker.backend.service.CsvExportService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.fredmheir.inventorytracker.backend.service.ItemService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,13 +17,13 @@ import java.util.Optional;
 @RequestMapping("/inventory")
 public class ItemController {
 
-	@Autowired
-	ItemRepository itemRepository;
-
 	private final CsvExportService csvExportService;
 
-	public ItemController(CsvExportService csvExportService) {
+	private final ItemService itemService;
+
+	public ItemController(CsvExportService csvExportService, ItemService itemService) {
 		this.csvExportService = csvExportService;
+		this.itemService = itemService;
 	}
 
 	@RequestMapping(path = "/items/export")
@@ -38,24 +36,23 @@ public class ItemController {
 	@GetMapping("/items")
 	public ResponseEntity<List<Item>> getAllItems(@RequestParam(required = false) String name) {
 		try {
-			List<Item> items = new ArrayList<>();
-			if (name == null)
-				items.addAll(itemRepository.findAll());
-			else
-				items.addAll(itemRepository.findByName(name));
+			List<Item> items = itemService.getAllItems(name);
 			if (items.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			}
-			return new ResponseEntity<>(items, HttpStatus.OK);
+			else {
+				return new ResponseEntity<>(items, HttpStatus.OK);
+			}
 		}
 		catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
+
 	}
 
 	@GetMapping("/items/{id}")
 	public ResponseEntity<Item> getItemById(@PathVariable("id") long id) {
-		Optional<Item> itemData = itemRepository.findById(id);
+		Optional<Item> itemData = itemService.getItemById(id);
 
 		if (itemData.isPresent()) {
 			return new ResponseEntity<>(itemData.get(), HttpStatus.OK);
@@ -66,9 +63,9 @@ public class ItemController {
 	}
 
 	@PostMapping("/items")
-	public ResponseEntity<Item> createTutorial(@RequestBody Item item) {
+	public ResponseEntity<Item> createItem(@RequestBody Item item) {
 		try {
-			Item _item = itemRepository.save(new Item(item.getName(), item.getQty(), item.getCost()));
+			Item _item = itemService.createItem(item);
 			return new ResponseEntity<>(_item, HttpStatus.CREATED);
 		}
 		catch (Exception e) {
@@ -78,16 +75,11 @@ public class ItemController {
 
 	@PutMapping("/items/{id}")
 	public ResponseEntity<Item> updateItem(@PathVariable("id") long id, @RequestBody Item item) {
-		Optional<Item> itemData = itemRepository.findById(id);
-
-		if (itemData.isPresent()) {
-			Item _item = itemData.get();
-			_item.setName(item.getName());
-			_item.setQty(item.getQty());
-			_item.setCost(item.getCost());
-			return new ResponseEntity<>(itemRepository.save(_item), HttpStatus.OK);
+		try {
+			Item _item = itemService.updateItem(id, item);
+			return new ResponseEntity<>(_item, HttpStatus.OK);
 		}
-		else {
+		catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
@@ -95,7 +87,7 @@ public class ItemController {
 	@DeleteMapping("/items/{id}")
 	public ResponseEntity<HttpStatus> deleteItem(@PathVariable("id") long id) {
 		try {
-			itemRepository.deleteById(id);
+			itemService.deleteItem(id);
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		catch (Exception e) {
@@ -106,7 +98,7 @@ public class ItemController {
 	@DeleteMapping("/items")
 	public ResponseEntity<HttpStatus> deleteAllItems() {
 		try {
-			itemRepository.deleteAll();
+			itemService.deleteAllItems();
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		catch (Exception e) {

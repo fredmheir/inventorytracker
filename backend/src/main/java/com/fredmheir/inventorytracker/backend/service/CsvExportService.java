@@ -11,9 +11,13 @@ import java.io.Writer;
 import java.util.List;
 
 import org.slf4j.Logger;
+
+import javax.transaction.Transactional;
+
 import static org.slf4j.LoggerFactory.getLogger;
 
 @Service
+@Transactional
 public class CsvExportService {
 
 	private static final Logger log = getLogger(String.valueOf(CsvExportService.class));
